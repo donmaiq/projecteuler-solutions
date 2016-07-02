@@ -1,4 +1,6 @@
-#summer
+import time
+import math
+start = time.time()
 
 def is_multiple(number,multiple):
     if number%multiple == 0:
@@ -11,3 +13,7 @@ for x in range(0,1000):
     if is_multiple(x,3) or is_multiple(x,5):
         total_sum += x
 print(total_sum)
+
+end = time.time()
+print(round(end - start,4),"seconds")
+

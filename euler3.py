@@ -1,3 +1,7 @@
+import time
+import math
+start = time.time()
+
 def prime_factors(n):
     factors = []
     d = 2
@@ -11,6 +15,9 @@ def prime_factors(n):
             break
     return factors
 
+print(int(max(prime_factors(600851475143))))
 
-pfs = prime_factors(1000)
-largest_prime = max(pfs)
+end = time.time()
+print(round(end - start,4),"seconds")
+
+
