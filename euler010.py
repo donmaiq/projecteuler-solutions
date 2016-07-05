@@ -1,6 +1,7 @@
 import time
 start=time.time()
 
+#get primes below n using sieves algorithm
 def primes_below(n):
     sieve = [True] * n
     for i in range(3,int(n**0.5)+1,2):
