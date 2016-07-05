@@ -1,25 +1,15 @@
-import math
 import time
 start=time.time()
 
-x = 3
-primes=[2]
+def primes_below(n):
+    sieve = [True] * n
+    for i in range(3,int(n**0.5)+1,2):
+        if sieve[i]:
+            sieve[i*i::2*i]=[False]*int(((n-i*i-1)/(2*i)+1))
+    return [2] + [i for i in range(3,n,2) if sieve[i]]
 
-counter=1
-while x<2000000:
-	isprime=True
-	for prime in primes:
-		if prime>math.sqrt(x)+1:
-			break
-		if x%prime==0:
-			isprime=False
-			break
-	if isprime:
-		primes.append(x)
-	if counter%200000==0:
-		print(str(counter/10000)+"%")
-	x+=2
-	counter+=1
-print("sum of "+str(len(primes))+" primes= "+str(sum(primes)))
+
+print(sum(primes_below(2000000)))
+
 end=time.time()
 print(str(round(end-start,3))+" seconds")
