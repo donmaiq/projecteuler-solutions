@@ -7,24 +7,22 @@ def is_triplet(array):
 		return True
 	return False
 
-def triplet_equals(array,num):
-	if sum(array)==num:
-		return True
-	return False
-
 c=4
 correct=[]
 found=False
+#find a pythagoran that is divisible by 1000
 while not found:
 	power=c**2
 	for b in range(c,1,-1):
 		for a in range(c-1,1,-1):
-			if is_triplet([a,b,c]) and triplet_equals([a,b,c],1000):
-				correct=[a,b,c]
-				found=True
-				break
+			if is_triplet([a,b,c]) and (1000/(a+b+c))%1==0:
+				tmp=1000/(a+b+c)
+				if (tmp*a)+(tmp*b)+(tmp*c)==1000:
+					found=True
+					correct=[tmp*a,tmp*b,tmp*c]
+					break
 	c+=1
-	print(c)
 print(correct)
+print(correct[0]*correct[1]*correct[2])
 end=time.time()
 print(str(end-start)+" seconds")
