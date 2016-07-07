@@ -42,6 +42,3 @@ print(biggest_value)
 end=time.time()
 print(str(round(end-start,3))+" seconds")
 
-
-end=time.time()
-print(str(round(end-start,3))+" seconds")
