@@ -7,7 +7,6 @@ def is_divisible(arg):
             return False
     return True
 
-searching = True
 inc=0
 while True:
     inc += 380 #increment with product of 19 and 20

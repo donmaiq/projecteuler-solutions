@@ -22,7 +22,7 @@ while not found:
 					correct=[tmp*a,tmp*b,tmp*c]
 					break
 	c+=1
-print(correct)
-print(correct[0]*correct[1]*correct[2])
+	
+print(round(correct[0]*correct[1]*correct[2]))
 end=time.time()
 print(str(end-start)+" seconds")

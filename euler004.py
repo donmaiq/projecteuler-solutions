@@ -1,3 +1,6 @@
+import time
+start=time.time()
+
 def is_palindrome(arg):
     string = str(arg)
     rev = ""
@@ -12,18 +15,16 @@ def is_palindrome(arg):
 
 a=999
 b=999
-c=91
-d=99
 result=[]
 for x in range(0,100):
-    if is_palindrome(a*b):
-        result.append(str(a)+" "+str(b))
-    a -= 1
     for x in range(0,100):
         if is_palindrome(a*b):
             result.append(a*b)
-        b -= 1
+        b-=1
+    a-=1
     b=999
 print(max(result))
-        
+
+end=time.time()
+print(str(round(end-start,3))+" seconds")
         

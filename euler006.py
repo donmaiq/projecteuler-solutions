@@ -13,5 +13,5 @@ for x in range(1,101):
 difference = squaresum - summ
 print(difference)
 
-end = time.time()
-print(end - start,"seconds")
+end=time.time()
+print(str(round(end-start,3))+" seconds")
